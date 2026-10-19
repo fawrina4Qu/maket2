@@ -24,9 +24,9 @@ const loginHtml = `<!doctype html>
       </div>
       <form id="signupForm">
         <label class="field"><span>ЮЗЕРНЕЙМ</span><input name="username" autocomplete="nickname" minlength="2" maxlength="120" required></label>
+        <label class="field"><span>АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ</span><input name="email" type="email" autocomplete="email" required></label>
         <label class="field"><span>ПАРОЛЬ</span><input name="password" type="password" autocomplete="new-password" minlength="12" required></label>
         <label class="field"><span>ПОВТОРИТЕ ПАРОЛЬ</span><input name="repeatPassword" type="password" autocomplete="new-password" minlength="12" required></label>
-        <label class="field"><span>АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ</span><input name="email" type="email" autocomplete="email" required></label>
         <button class="submit" type="submit">Зарегистрироваться <span aria-hidden="true">→</span></button>
       </form>
       <form id="loginForm" class="hidden">
