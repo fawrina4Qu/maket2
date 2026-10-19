@@ -1,4 +1,3 @@
-import { HomeLink } from "@/components/home-link";
 import { InteractiveRussiaMap } from "@/components/interactive-russia-map";
 import { SiteLayout } from "@/components/site-layout";
 
@@ -9,7 +8,6 @@ export function meta() {
 export default function MapRoute() {
   return (
     <SiteLayout>
-      <HomeLink />
       <InteractiveRussiaMap />
     </SiteLayout>
   );

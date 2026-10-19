@@ -22,7 +22,7 @@ export function WelcomeView() {
   }, []);
 
   return (
-    <SiteLayout showCommunity={false}>
+    <SiteLayout showCommunity={false} showHomeLink={false}>
       <section className="hero" id="welcome">
         <div className="hero-carousel">
           {slides.map((src, index) => (

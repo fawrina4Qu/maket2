@@ -1,4 +1,3 @@
-import { HomeLink } from "@/components/home-link";
 import { LectureGrid } from "@/components/lecture-grid";
 import { PageHeading } from "@/components/page-heading";
 import { SiteLayout } from "@/components/site-layout";
@@ -11,7 +10,6 @@ export function meta() {
 export default function NewArrivalsRoute() {
   return (
     <SiteLayout>
-      <HomeLink />
       <PageHeading eyebrow="СВЕЖИЕ МАТЕРИАЛЫ" title={<>Новые <em>лекции</em></>}>Недавно добавленные лекции по истории России.</PageHeading>
       <section className="section-wrap page-content"><LectureGrid lectures={newLectures} /></section>
     </SiteLayout>
