@@ -328,9 +328,6 @@
 .lecture-section-card p { margin:0 0 20px; color:#927471; font:italic 13px/1.6 Georgia,serif; }
 .lecture-section-footer { display:flex; align-items:center; gap:8px; margin-top:auto; color:#9a5c64; font-size:9px; letter-spacing:.09em; text-transform:uppercase; }
 .lecture-back-link { margin:0 0 22px; }
-.page-nav { display:flex; flex-wrap:wrap; justify-content:flex-start; gap:12px clamp(20px,3vw,40px); padding-top:28px; }
-.page-nav a { font-size:11px; letter-spacing:.045em; color:#6e5553; transition:color .2s; }
-.page-nav a:hover, .page-nav a.active { color:#b25c70; }
 .home-link-row { padding-top:28px; }
 .home-link-row .lecture-back-link { margin:0; }
 .lecture-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }

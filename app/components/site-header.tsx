@@ -2,8 +2,15 @@ import { useEffect, useState } from "react";
 import { signOut, useSession } from "@agent-native/core/client/hooks";
 import { IconHeart, IconLogout2, IconSearch, IconX } from "@tabler/icons-react";
 import { Link, NavLink, useLocation } from "react-router";
-import { links } from "@/components/page-nav";
 import { setFavoritesPanelOpen, useFavoritesPanelOpen } from "@/lib/favorites-store";
+
+const links = [
+  { label: "Новинки", to: "/new" },
+  { label: "Интерактивная карта", to: "/map" },
+  { label: "Лекции", to: "/lectures" },
+  { label: "Ключевые эпохи", to: "/eras" },
+  { label: "О нас", to: "/about" },
+];
 import { searchSite } from "@/lib/search";
 
 export function SiteHeader() {
