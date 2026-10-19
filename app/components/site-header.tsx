@@ -1,20 +1,11 @@
 import { useEffect, useState } from "react";
 import { signOut, useSession } from "@agent-native/core/client/hooks";
-import { IconArrowRight, IconHeart, IconLogout2, IconMenu2, IconSearch, IconX } from "@tabler/icons-react";
+import { IconHeart, IconLogout2, IconSearch, IconX } from "@tabler/icons-react";
 import { Link, NavLink, useLocation } from "react-router";
 import { setFavoritesPanelOpen, useFavoritesPanelOpen } from "@/lib/favorites-store";
 import { searchSite } from "@/lib/search";
 
-const links = [
-  { label: "Новинки", to: "/new" },
-  { label: "Интерактивная карта", to: "/map" },
-  { label: "Лекции", to: "/lectures" },
-  { label: "Ключевые эпохи", to: "/eras" },
-  { label: "О нас", to: "/about" },
-];
-
 export function SiteHeader() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
   const { session } = useSession();
@@ -42,16 +33,6 @@ export function SiteHeader() {
         <NavLink to="/" className="brand site-name" aria-label="История России для чайников — главная">
           <span className="brand-mark">✿</span><span>История России <i>для чайников</i></span>
         </NavLink>
-        <button className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"} aria-expanded={menuOpen}>
-          {menuOpen ? <IconX /> : <IconMenu2 />}
-        </button>
-        <nav className={menuOpen ? "main-nav is-open" : "main-nav"} aria-label="Основная навигация">
-          {links.map((link) => (
-            <NavLink key={link.to} to={link.to} onClick={() => setMenuOpen(false)}>
-              {link.label}{link.label === "Курсы" && <IconArrowRight size={13} />}
-            </NavLink>
-          ))}
-        </nav>
         <div className="header-actions">
           <div className="header-search">
             {searchOpen && (
