@@ -4,13 +4,14 @@ import { Link, NavLink } from "react-router";
 import { FavoritesOverlay } from "@/components/favorites-overlay";
 import { FeedbackDialog, NewsletterDialog } from "@/components/footer-dialogs";
 import { HistoryTiles } from "@/components/history-tiles";
+import { HomeLink } from "@/components/home-link";
 import { SiteHeader } from "@/components/site-header";
 function scrollPageToTop() {
   const scroller: Element | Window = document.querySelector(".agent-native-app-main") ?? window;
   scroller.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-export function SiteLayout({ children, showCommunity = true, showFooter = true }: { children: ReactNode; showCommunity?: boolean; showFooter?: boolean }) {
+export function SiteLayout({ children, showCommunity = true, showFooter = true, showHomeLink = true }: { children: ReactNode; showCommunity?: boolean; showFooter?: boolean; showHomeLink?: boolean }) {
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [newsletterOpen, setNewsletterOpen] = useState(false);
   const [subscriberEmail, setSubscriberEmail] = useState("");
@@ -25,7 +26,7 @@ export function SiteLayout({ children, showCommunity = true, showFooter = true }
     <div className="blossom-site">
       <SiteHeader />
       <FavoritesOverlay />
-      <main className="site-page-content">{children}</main>
+      <main className="site-page-content">{showHomeLink && <HomeLink />}{children}</main>
       {showCommunity && <section className="community section-wrap">
         <div className="section-heading">
           <div><p className="eyebrow">МЫ УЧИМСЯ ВМЕСТЕ</p><h2>История России <em>для чайников</em></h2><p className="section-sub">История становится ближе, когда ей делятся.</p></div>

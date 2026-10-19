@@ -38,9 +38,6 @@ export function SiteHeader() {
     <>
       <div className="topline">Первая лекция бесплатно <span>✦</span> Скидка 10% на первый курс по промокоду <strong>BLOOMHISTORY</strong></div>
       <header className="site-header">
-        <NavLink to="/" className="brand site-name" aria-label="История России для чайников — главная">
-          <span className="brand-mark">✿</span><span>История России <i>для чайников</i></span>
-        </NavLink>
         <nav className="main-nav" aria-label="Меню">
           {links.map((link) => (
             <NavLink key={link.to} to={link.to}>{link.label}</NavLink>
