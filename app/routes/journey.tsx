@@ -1,6 +1,5 @@
 import { IconBooks, IconHourglass, IconMap2 } from "@tabler/icons-react";
 import { Link } from "react-router";
-import { SectionNav } from "@/components/section-nav";
 import { SiteLayout } from "@/components/site-layout";
 
 export function meta() {
@@ -32,7 +31,6 @@ export default function JourneyRoute() {
   return (
     <SiteLayout showCommunity={false}>
       <section className="journey-page section-wrap">
-        <SectionNav className="journey-nav" />
         <div className="journey-grid">
           {destinations.map(({ to, title, icon: Icon, text }) => (
             <Link className="journey-block" to={to} key={to}>

@@ -5,7 +5,7 @@ import { Link, NavLink, useLocation } from "react-router";
 import { setFavoritesPanelOpen, useFavoritesPanelOpen } from "@/lib/favorites-store";
 import { searchSite } from "@/lib/search";
 
-export const links = [
+const links = [
   { label: "Новинки", to: "/new" },
   { label: "Интерактивная карта", to: "/map" },
   { label: "Лекции", to: "/lectures" },

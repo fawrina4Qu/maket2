@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { IconArrowRight } from "@tabler/icons-react";
 import { Link } from "react-router";
 import { HistoryTiles } from "@/components/history-tiles";
-import { SectionNav } from "@/components/section-nav";
 import { SiteLayout } from "@/components/site-layout";
 
 const slides = [
@@ -25,7 +24,6 @@ export function WelcomeView() {
   return (
     <SiteLayout showCommunity={false}>
       <section className="hero" id="welcome">
-        <SectionNav className="hero-nav" />
         <div className="hero-carousel">
           {slides.map((src, index) => (
             <img key={src} className={index === activeSlide ? "hero-slide is-active" : "hero-slide"} src={src} alt="" aria-hidden={index !== activeSlide} />
