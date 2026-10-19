@@ -34,6 +34,9 @@ type Pages = {
   "/eras": {
     params: {};
   };
+  "/eras/romanov": {
+    params: {};
+  };
   "/map": {
     params: {};
   };
@@ -45,7 +48,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/favorites" | "/lectures" | "/lectures/:sectionId" | "/welcome" | "/about" | "/eras" | "/map" | "/new";
+    page: "/" | "/favorites" | "/lectures" | "/lectures/:sectionId" | "/welcome" | "/about" | "/eras" | "/eras/romanov" | "/map" | "/new";
   };
   "routes/favorites.tsx": {
     id: "routes/favorites";
@@ -77,7 +80,11 @@ type RouteFiles = {
   };
   "routes/eras.tsx": {
     id: "routes/eras";
-    page: "/eras";
+    page: "/eras" | "/eras/romanov";
+  };
+  "routes/eras.romanov.tsx": {
+    id: "routes/eras.romanov";
+    page: "/eras/romanov";
   };
   "routes/map.tsx": {
     id: "routes/map";
@@ -99,6 +106,7 @@ type RouteModules = {
   "routes/_index": typeof import("./app/routes/_index.tsx");
   "routes/about": typeof import("./app/routes/about.tsx");
   "routes/eras": typeof import("./app/routes/eras.tsx");
+  "routes/eras.romanov": typeof import("./app/routes/eras.romanov.tsx");
   "routes/map": typeof import("./app/routes/map.tsx");
   "routes/new": typeof import("./app/routes/new.tsx");
 };
