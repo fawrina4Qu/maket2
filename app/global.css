@@ -427,5 +427,7 @@
 .journey-block h2 { margin:6px 0 0; font:400 26px/1.15 Georgia,serif; color:#743d4a; }
 .journey-block p { margin:0; font-size:14px; line-height:1.75; color:#68504d; }
 .journey-page { display:flex; flex-direction:column; justify-content:center; min-height:60vh; padding:80px 0; }
-.journey-home-link { align-self:flex-start; margin:0 0 40px; }
+.journey-nav { display:flex; flex-wrap:wrap; justify-content:flex-start; gap:12px 24px; align-self:flex-start; margin:0 0 40px; }
+.journey-nav a { color:#743d4a; text-decoration:none; font:500 16px/1.2 Georgia,serif; }
+.journey-nav a:hover, .journey-nav a.active { text-decoration:underline; }
 @media (max-width:900px) { .journey-grid { grid-template-columns:1fr; } }
