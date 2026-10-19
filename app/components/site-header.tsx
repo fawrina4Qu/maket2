@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { signOut, useSession } from "@agent-native/core/client/hooks";
 import { IconHeart, IconLogout2, IconSearch, IconX } from "@tabler/icons-react";
 import { Link, NavLink, useLocation } from "react-router";
+import { links } from "@/components/page-nav";
 import { setFavoritesPanelOpen, useFavoritesPanelOpen } from "@/lib/favorites-store";
 import { searchSite } from "@/lib/search";
 
@@ -33,6 +34,11 @@ export function SiteHeader() {
         <NavLink to="/" className="brand site-name" aria-label="История России для чайников — главная">
           <span className="brand-mark">✿</span><span>История России <i>для чайников</i></span>
         </NavLink>
+        <nav className="main-nav" aria-label="Меню">
+          {links.map((link) => (
+            <NavLink key={link.to} to={link.to}>{link.label}</NavLink>
+          ))}
+        </nav>
         <div className="header-actions">
           <div className="header-search">
             {searchOpen && (

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 
-const links = [
+export const links = [
   { label: "Новинки", to: "/new" },
   { label: "Интерактивная карта", to: "/map" },
   { label: "Лекции", to: "/lectures" },
