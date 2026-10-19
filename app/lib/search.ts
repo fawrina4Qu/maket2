@@ -1,4 +1,4 @@
-import { courses, popular } from "@/lib/catalog";
+import { courses } from "@/lib/catalog";
 import { allLectures, lectureSections } from "@/lib/lectures";
 
 export interface SearchResult {
@@ -34,10 +34,7 @@ export function searchSite(query: string): SearchResult[] {
     if (matches(lecture.title, lecture.detail)) results.push({ key: `lecture-${lecture.sectionId}-${lecture.number}`, title: lecture.title, subtitle: lecture.sectionTitle, to: `/lectures/${lecture.sectionId}#lecture-${lecture.number}` });
   }
   for (const course of courses) {
-    if (matches(course.title, course.detail, course.category)) results.push({ key: `course-${course.title}`, title: course.title, subtitle: course.detail, to: "/favorites" });
-  }
-  for (const [number, title] of popular) {
-    if (matches(title)) results.push({ key: `popular-${number}`, title, subtitle: "Любимые курсы", to: "/favorites" });
+    if (matches(course.title, course.detail, course.category)) results.push({ key: `course-${course.title}`, title: course.title, subtitle: course.detail, to: "/lectures" });
   }
 
   return results.slice(0, 12);

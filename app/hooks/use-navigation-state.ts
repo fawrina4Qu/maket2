@@ -25,7 +25,6 @@ function viewForPath(pathname: string): string {
   if (pathname.startsWith("/lectures/")) return "lecture-section";
   switch (pathname) {
     case "/new": return "new-arrivals";
-    case "/favorites": return "favorite-courses";
     case "/lectures": return "lectures";
     case "/eras": return "eras";
     case "/about": return "about";
@@ -37,7 +36,6 @@ function viewForPath(pathname: string): string {
 function pathForView(view?: string): string {
   switch (view) {
     case "new-arrivals": return "/new";
-    case "favorite-courses": return "/favorites";
     case "lectures":
     case "lecture-section": return "/lectures";
     case "eras": return "/eras";

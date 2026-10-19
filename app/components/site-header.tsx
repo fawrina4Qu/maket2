@@ -7,7 +7,7 @@ import { searchSite } from "@/lib/search";
 
 const links = [
   { label: "Новинки", to: "/new" },
-  { label: "Курсы", to: "/favorites" },
+  { label: "Интерактивная карта", to: "/map" },
   { label: "Лекции", to: "/lectures" },
   { label: "Ключевые эпохи", to: "/eras" },
   { label: "О нас", to: "/about" },

@@ -14,9 +14,6 @@ type Pages = {
   "/": {
     params: {};
   };
-  "/favorites": {
-    params: {};
-  };
   "/lectures": {
     params: {};
   };
@@ -48,11 +45,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/favorites" | "/lectures" | "/lectures/:sectionId" | "/welcome" | "/about" | "/eras" | "/eras/romanov" | "/map" | "/new";
-  };
-  "routes/favorites.tsx": {
-    id: "routes/favorites";
-    page: "/favorites";
+    page: "/" | "/lectures" | "/lectures/:sectionId" | "/welcome" | "/about" | "/eras" | "/eras/romanov" | "/map" | "/new";
   };
   "routes/lectures.tsx": {
     id: "routes/lectures";
@@ -98,7 +91,6 @@ type RouteFiles = {
 
 type RouteModules = {
   "root": typeof import("./app/root.tsx");
-  "routes/favorites": typeof import("./app/routes/favorites.tsx");
   "routes/lectures": typeof import("./app/routes/lectures.tsx");
   "routes/lectures.$sectionId": typeof import("./app/routes/lectures.$sectionId.tsx");
   "routes/lectures._index": typeof import("./app/routes/lectures._index.tsx");
