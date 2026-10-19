@@ -27,8 +27,11 @@ export default function HistoryFigureRoute() {
       <section className="section-wrap page-content history-figure">
         <Link className="lecture-back-link" to="/"><IconArrowLeft size={17} /> На главную</Link>
         <header className="history-figure-header">
-          <h1>{figure.name}</h1>
-          <p className="history-figure-years">ГОДЫ ЖИЗНИ И ПРАВЛЕНИЯ · {figure.years}</p>
+          <div className="history-figure-title">
+            <h1>{figure.name}</h1>
+            <p className="history-figure-years">ГОДЫ ЖИЗНИ И ПРАВЛЕНИЯ · {figure.years}</p>
+          </div>
+          <img className="history-figure-image" src={figure.image} alt={figure.name} />
         </header>
         <div className="history-figure-layout">
           <div className="history-figure-sections">
@@ -47,7 +50,6 @@ export default function HistoryFigureRoute() {
               </article>
             ))}
           </div>
-          <img className="history-figure-image" src={figure.image} alt={figure.name} />
         </div>
       </section>
     </SiteLayout>
