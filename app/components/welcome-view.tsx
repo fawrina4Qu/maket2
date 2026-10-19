@@ -59,9 +59,12 @@ export function WelcomeView() {
         </div>
         <div className="community-grid">
           {historyFigures.map((figure, index) => (
-            <Link className="community-tile" to={`/history/${figure.id}`} aria-label={figure.name} key={figure.id}>
-              <img src={collageImages[index]} alt={figure.name} loading="lazy" />
-              <span>✿</span>
+            <Link className="community-tile history-tile" to={`/history/${figure.id}`} aria-label={figure.name} key={figure.id}>
+              <div className="history-tile-media">
+                <img src={collageImages[index]} alt={figure.name} loading="lazy" />
+                <span>✿</span>
+              </div>
+              <p className="history-tile-name">{figure.name}</p>
             </Link>
           ))}
         </div>
