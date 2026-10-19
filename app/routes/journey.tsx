@@ -1,7 +1,7 @@
 import { IconBooks, IconHourglass, IconMap2 } from "@tabler/icons-react";
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
+import { SectionNav } from "@/components/section-nav";
 import { SiteLayout } from "@/components/site-layout";
-import { links } from "@/components/site-header";
 
 export function meta() {
   return [{ title: "Начать путешествие — История России для чайников" }];
@@ -32,11 +32,7 @@ export default function JourneyRoute() {
   return (
     <SiteLayout showCommunity={false}>
       <section className="journey-page section-wrap">
-        <nav className="journey-nav" aria-label="Разделы сайта">
-          {links.map((link) => (
-            <NavLink key={link.to} to={link.to}>{link.label}</NavLink>
-          ))}
-        </nav>
+        <SectionNav className="journey-nav" />
         <div className="journey-grid">
           {destinations.map(({ to, title, icon: Icon, text }) => (
             <Link className="journey-block" to={to} key={to}>

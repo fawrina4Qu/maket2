@@ -430,4 +430,8 @@
 .journey-nav { display:flex; flex-wrap:wrap; justify-content:flex-start; gap:12px 24px; align-self:flex-start; margin:0 0 40px; }
 .journey-nav a { color:#743d4a; text-decoration:none; font:500 16px/1.2 Georgia,serif; }
 .journey-nav a:hover, .journey-nav a.active { text-decoration:underline; }
+.hero-nav { position:absolute; top:28px; left:11.5%; z-index:2; display:flex; flex-wrap:wrap; gap:12px 24px; }
+.hero-nav a { color:#743d4a; text-decoration:none; font:500 16px/1.2 Georgia,serif; }
+.hero-nav a:hover, .hero-nav a.active { text-decoration:underline; }
+@media (max-width:900px) { .hero-nav { left:8%; } }
 @media (max-width:900px) { .journey-grid { grid-template-columns:1fr; } }
