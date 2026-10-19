@@ -43,7 +43,7 @@ export function WelcomeView() {
           <div className="hero-brandline">ДЛЯ ТЕХ, КТО ХОЧЕТ ЗНАТЬ БОЛЬШЕ</div>
           <p className="hero-copy">Великие события, судьбы людей и города, которые меняли страну. Откройте Россию — шаг за шагом и эпоха за эпохой.</p>
           <div className="hero-buttons">
-            <Link className="button button-primary" to="/">Начать путешествие <IconArrowRight size={17} /></Link>
+            <Link className="button button-primary" to="/journey">Начать путешествие <IconArrowRight size={17} /></Link>
           </div>
         </div>
         <div className="hero-dots">
