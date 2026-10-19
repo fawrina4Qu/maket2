@@ -25,6 +25,21 @@ export function MissionDialog({ open, onOpenChange }: FooterDialogProps) {
   );
 }
 
+export function NewsletterDialog({ open, onOpenChange }: FooterDialogProps) {
+  return (
+    <Dialog.Root open={open} onOpenChange={onOpenChange}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="site-dialog-overlay" />
+        <Dialog.Content className="site-dialog">
+          <Dialog.Title className="site-dialog-title">Спасибо за подписку!</Dialog.Title>
+          <Dialog.Description className="site-dialog-text">Спасибо за подписку на нашу рассылку, проверяйте уведомления на электронной почте.</Dialog.Description>
+          <Dialog.Close className="site-dialog-close" aria-label="Закрыть">×</Dialog.Close>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
+  );
+}
+
 export function FeedbackDialog({ open, onOpenChange }: FooterDialogProps) {
   const { session } = useSession();
   const [username, setUsername] = useState("");
