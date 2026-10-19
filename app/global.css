@@ -328,6 +328,8 @@
 .lecture-section-card p { margin:0 0 20px; color:#927471; font:italic 13px/1.6 Georgia,serif; }
 .lecture-section-footer { display:flex; align-items:center; gap:8px; margin-top:auto; color:#9a5c64; font-size:9px; letter-spacing:.09em; text-transform:uppercase; }
 .lecture-back-link { margin:0 0 22px; }
+.home-link-row { padding-top:28px; }
+.home-link-row .lecture-back-link { margin:0; }
 .lecture-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
 .lecture-card { min-width:0; background:#fff; border:1px solid #f0e3df; }
 .lecture-image { position:relative; aspect-ratio:1.25; overflow:hidden; background:#ead3cf; }

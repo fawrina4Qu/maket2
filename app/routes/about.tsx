@@ -1,3 +1,4 @@
+import { HomeLink } from "@/components/home-link";
 import { PageHeading } from "@/components/page-heading";
 import { SiteLayout } from "@/components/site-layout";
 
@@ -8,6 +9,7 @@ export function meta() {
 export default function AboutRoute() {
   return (
     <SiteLayout>
+      <HomeLink />
       <PageHeading eyebrow="ЛИЦО И ИДЕЯ ПЛАТФОРМЫ" title={<>Учиться красиво.<br /><em>Помнить глубоко.</em></>}>О проекте и нашей миссии.</PageHeading>
       <section className="founder section-wrap" id="creator">
         <div className="founder-photo"><img src="https://cdn.builder.io/api/v1/image/assets%2F00a9bc1a46c643ac900551296cbc3a27%2Fb02e2d68b7f44d748fd29d625bdeacdd?format=webp&width=800&height=1200" alt="Портрет создателя проекта" /></div>
