@@ -410,7 +410,11 @@
 .history-tile img { display:block; width:100%; aspect-ratio:3/4; object-fit:cover; margin-bottom:12px; }
 .history-tile span { font-size:9px; letter-spacing:.14em; color:#a37168; text-transform:uppercase; }
 .history-tile h3 { margin:6px 0 0; font:400 20px Georgia,serif; color:#743d4a; }
-.history-figure-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); gap:40px; align-items:start; }
+.history-figure-header { padding:44px 0 56px; text-align:center; }
+.history-figure-header h1 { margin:0; color:#603f40; font:400 clamp(43px,6vw,72px)/1.04 Georgia,serif; letter-spacing:-.045em; }
+.history-figure-years { margin:18px 0 0; color:#a37168; font-size:9px; font-weight:600; letter-spacing:.21em; }
+.history-figure-intro { margin:0 0 28px; font:italic 16px/1.75 Georgia,serif; color:#927471; }
+.history-figure-layout { display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:56px; align-items:center; }
 .history-figure-image { display:block; width:100%; object-fit:cover; }
 .history-figure-section { margin-bottom:28px; }
 .history-figure-section h2 { margin:0 0 10px; font:400 24px Georgia,serif; color:#743d4a; }
