@@ -1,5 +1,4 @@
-import { courses } from "@/lib/catalog";
-import { allLectures, lectureSections } from "@/lib/lectures";
+import { allLectures } from "@/lib/lectures";
 
 export interface SearchResult {
   key: string;
@@ -18,23 +17,30 @@ const pages = [
 
 const normalize = (value: string) => value.toLowerCase().replace(/ё/g, "е");
 
+const words = (value: string) => normalize(value).split(/[^a-zа-я0-9]+/).filter(Boolean);
+
+function wordStem(word: string) {
+  return word.length >= 5 ? word.slice(0, -1) : word;
+}
+
+function matchesQuery(fields: string[], queryWords: string[]) {
+  const fieldWords = fields.flatMap(words);
+  return queryWords.every((queryWord) => {
+    const stem = wordStem(queryWord);
+    return fieldWords.some((fieldWord) => fieldWord.startsWith(stem));
+  });
+}
+
 export function searchSite(query: string): SearchResult[] {
-  const needle = normalize(query.trim());
-  if (!needle) return [];
-  const matches = (...fields: string[]) => fields.some((field) => normalize(field).includes(needle));
+  const queryWords = words(query.trim());
+  if (queryWords.length === 0) return [];
   const results: SearchResult[] = [];
 
   for (const page of pages) {
-    if (matches(page.title, page.text)) results.push({ key: `page-${page.to}`, title: page.title, subtitle: page.text, to: page.to });
-  }
-  for (const section of lectureSections) {
-    if (matches(section.title, section.description, section.era)) results.push({ key: `section-${section.id}`, title: section.title, subtitle: section.era, to: `/lectures/${section.id}` });
+    if (matchesQuery([page.title, page.text], queryWords)) results.push({ key: `page-${page.to}`, title: page.title, subtitle: page.text, to: page.to });
   }
   for (const lecture of allLectures) {
-    if (matches(lecture.title, lecture.detail)) results.push({ key: `lecture-${lecture.sectionId}-${lecture.number}`, title: lecture.title, subtitle: lecture.sectionTitle, to: `/lectures/${lecture.sectionId}#lecture-${lecture.number}` });
-  }
-  for (const course of courses) {
-    if (matches(course.title, course.detail, course.category)) results.push({ key: `course-${course.title}`, title: course.title, subtitle: course.detail, to: "/lectures" });
+    if (matchesQuery([lecture.title, lecture.detail], queryWords)) results.push({ key: `lecture-${lecture.sectionId}-${lecture.number}`, title: lecture.title, subtitle: lecture.sectionTitle, to: `/lectures/${lecture.sectionId}#lecture-${lecture.number}` });
   }
 
   return results.slice(0, 12);

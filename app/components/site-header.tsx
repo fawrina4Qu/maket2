@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { signOut, useSession } from "@agent-native/core/client/hooks";
 import { IconArrowRight, IconHeart, IconLogout2, IconMenu2, IconSearch, IconX } from "@tabler/icons-react";
-import { Link, NavLink, useLocation, useNavigate } from "react-router";
+import { Link, NavLink, useLocation } from "react-router";
 import { setFavoritesPanelOpen, useFavoritesPanelOpen } from "@/lib/favorites-store";
 import { searchSite } from "@/lib/search";
 
@@ -19,12 +19,11 @@ export function SiteHeader() {
   const [query, setQuery] = useState("");
   const { session } = useSession();
   const { pathname } = useLocation();
-  const navigate = useNavigate();
   const favoritesOpen = useFavoritesPanelOpen();
   const results = searchSite(query);
 
   useEffect(() => {
-    if (pathname !== "/") setFavoritesPanelOpen(false);
+    setFavoritesPanelOpen(false);
   }, [pathname]);
 
   function closeSearch() {
@@ -33,9 +32,7 @@ export function SiteHeader() {
   }
 
   function toggleFavorites() {
-    const next = !favoritesOpen;
-    setFavoritesPanelOpen(next);
-    if (next && pathname !== "/") navigate("/");
+    setFavoritesPanelOpen(!favoritesOpen);
   }
 
   return (
@@ -82,10 +79,12 @@ export function SiteHeader() {
               {searchOpen ? <IconX /> : <IconSearch />}
             </button>
           </div>
-          <button className={favoritesOpen ? "header-favorites is-active" : "header-favorites"} onClick={toggleFavorites} aria-label="Понравившиеся лекции" aria-pressed={favoritesOpen}>
-            <IconHeart />
-          </button>
-          {session ? <button aria-label="Выйти из аккаунта" title={session.name ? `Выйти, ${session.name}` : "Выйти из аккаунта"} onClick={() => void signOut({ redirectTo: "/" })}><IconLogout2 /></button> : <NavLink className="header-login" to="/login">Войти</NavLink>}
+          {session && (
+            <button className={favoritesOpen ? "header-favorites is-active" : "header-favorites"} onClick={toggleFavorites} aria-label="Понравившиеся лекции" aria-pressed={favoritesOpen}>
+              <IconHeart />
+            </button>
+          )}
+          {session ? <button aria-label="Выйти из аккаунта" title={session.name ? `Выйти, ${session.name}` : "Выйти из аккаунта"} onClick={() => void signOut({ redirectTo: "/" })}><IconLogout2 /></button> : <NavLink className="header-login" to="/login" title="Войти">Войти</NavLink>}
         </div>
       </header>
     </>

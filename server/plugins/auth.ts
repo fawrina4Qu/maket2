@@ -25,8 +25,8 @@ const loginHtml = `<!doctype html>
       <form id="signupForm">
         <label class="field"><span>ЮЗЕРНЕЙМ</span><input name="username" autocomplete="nickname" minlength="2" maxlength="120" required></label>
         <label class="field"><span>АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ</span><input name="email" type="email" autocomplete="email" required></label>
-        <label class="field"><span>ПАРОЛЬ</span><input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
-        <label class="field"><span>ПОВТОРИТЕ ПАРОЛЬ</span><input name="repeatPassword" type="password" autocomplete="new-password" minlength="8" required></label>
+        <label class="field"><span>ПАРОЛЬ</span><input name="password" type="password" autocomplete="new-password" minlength="12" required></label>
+        <label class="field"><span>ПОВТОРИТЕ ПАРОЛЬ</span><input name="repeatPassword" type="password" autocomplete="new-password" minlength="12" required></label>
         <button class="submit" type="submit">Зарегистрироваться <span aria-hidden="true">→</span></button>
       </form>
       <form id="loginForm" class="hidden">
@@ -58,7 +58,7 @@ const loginHtml = `<!doctype html>
       loginTab.addEventListener("click",function(){showMode("login")});
       async function post(path,body){var response=await fetch(path,{method:"POST",credentials:"same-origin",headers:{"content-type":"application/json","X-Agent-Native-Frontend":"1"},body:JSON.stringify(body)});var data=await response.json().catch(function(){return {}});if(!response.ok||data.error||data.ok===false)throw new Error(data.error||"Не удалось выполнить запрос. Попробуйте ещё раз.");return data;}
       async function submit(form,button,work){button.disabled=true;error.textContent="";try{await work(new FormData(form));window.location.replace(resumeHref);}catch(reason){error.textContent=reason instanceof Error?reason.message:"Не удалось выполнить запрос. Попробуйте ещё раз.";button.disabled=false;}}
-      signupForm.addEventListener("submit",function(event){event.preventDefault();var button=signupForm.querySelector("button[type=submit]");submit(signupForm,button,async function(form){var username=String(form.get("username")||"").trim();var email=String(form.get("email")||"").trim();var password=String(form.get("password")||"");var repeatPassword=String(form.get("repeatPassword")||"");if(password!==repeatPassword)throw new Error("Пароли не совпадают.");if(username.length<2)throw new Error("Юзернейм должен содержать не менее двух символов.");await post("/_agent-native/auth/register",{email:email,password:password});await post("/_agent-native/auth/login",{email:email,password:password});await post("/_agent-native/actions/update-user-profile",{name:username});});});
+      signupForm.addEventListener("submit",function(event){event.preventDefault();var button=signupForm.querySelector("button[type=submit]");submit(signupForm,button,async function(form){var username=String(form.get("username")||"").trim();var email=String(form.get("email")||"").trim();var password=String(form.get("password")||"");var repeatPassword=String(form.get("repeatPassword")||"");if(password.length<12)throw new Error("Пароль должен содержать не менее 12 символов.");if(password!==repeatPassword)throw new Error("Пароли не совпадают.");if(username.length<2)throw new Error("Юзернейм должен содержать не менее двух символов.");await post("/_agent-native/auth/register",{email:email,password:password});await post("/_agent-native/auth/login",{email:email,password:password});await post("/_agent-native/actions/update-user-profile",{name:username});});});
       loginForm.addEventListener("submit",function(event){event.preventDefault();var button=loginForm.querySelector("button[type=submit]");submit(loginForm,button,async function(form){await post("/_agent-native/auth/login",{email:String(form.get("email")||"").trim(),password:String(form.get("password")||"")});});});
       fetch("/_agent-native/auth/session",{credentials:"same-origin"}).then(function(response){return response.json()}).then(function(session){if(session&&session.email)window.location.replace(resumeHref)}).catch(function(){});
     })();
@@ -66,4 +66,4 @@ const loginHtml = `<!doctype html>
 </body>
 </html>`;
 
-export default createAuthPlugin({ rootAuth: true, loginHtml });
+export default createAuthPlugin({ rootAuth: false, loginHtml });

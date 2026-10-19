@@ -22,6 +22,12 @@ export default function AboutRoute() {
           </ul>
         </div>
       </section>
+      <section className="section-wrap page-content" id="mission">
+        <p className="eyebrow">МИССИЯ</p>
+        <h2>Наша <em>миссия</em></h2>
+        <p>Миссия нашего проекта — сохранить историческую память и передать её будущим поколениям. Мы верим, что знание прошлого помогает осознать настоящее и уверенно строить будущее. Наша платформа — это мост между великими страницами истории России и современным человеком.</p>
+        <blockquote className="site-dialog-quote">Чем лучше мы знаем прошлое, тем увереннее идём вперёд.</blockquote>
+      </section>
     </SiteLayout>
   );
 }

@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useSession } from "@agent-native/core/client/hooks";
 import { IconArrowLeft } from "@tabler/icons-react";
@@ -7,23 +7,7 @@ import { Link } from "react-router";
 type FooterDialogProps = { open: boolean; onOpenChange: (open: boolean) => void };
 
 const FIELD_MAX_LENGTH = 2000;
-
-export function MissionDialog({ open, onOpenChange }: FooterDialogProps) {
-  return (
-    <Dialog.Root open={open} onOpenChange={onOpenChange}>
-      <Dialog.Portal>
-        <Dialog.Overlay className="site-dialog-overlay" />
-        <Dialog.Content className="site-dialog">
-          <Dialog.Title className="site-dialog-title">Наша миссия</Dialog.Title>
-          <Dialog.Description className="site-dialog-text">Миссия нашего проекта — сохранить историческую память и передать её будущим поколениям. Мы верим, что знание прошлого помогает осознать настоящее и уверенно строить будущее. Наша платформа — это мост между великими страницами истории России и современным человеком.</Dialog.Description>
-          <blockquote className="site-dialog-quote">Чем лучше мы знаем прошлое, тем увереннее идём вперёд.</blockquote>
-          <Link className="site-dialog-home" to="/" onClick={() => onOpenChange(false)}><IconArrowLeft size={16} /> На главную</Link>
-          <Dialog.Close className="site-dialog-close" aria-label="Закрыть">×</Dialog.Close>
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
-  );
-}
+const REGISTER_REDIRECT_SECONDS = 5;
 
 export function NewsletterDialog({ open, onOpenChange }: FooterDialogProps) {
   return (
@@ -47,6 +31,17 @@ export function FeedbackDialog({ open, onOpenChange }: FooterDialogProps) {
   const [question, setQuestion] = useState("");
   const [remark, setRemark] = useState("");
   const [sent, setSent] = useState(false);
+  const [registerCountdown, setRegisterCountdown] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (registerCountdown === null) return;
+    if (registerCountdown === 0) {
+      window.location.assign("/login");
+      return;
+    }
+    const timer = setTimeout(() => setRegisterCountdown(registerCountdown - 1), 1000);
+    return () => clearTimeout(timer);
+  }, [registerCountdown]);
 
   function handleOpenChange(nextOpen: boolean) {
     if (!nextOpen) {
@@ -58,8 +53,12 @@ export function FeedbackDialog({ open, onOpenChange }: FooterDialogProps) {
   }
 
   function fillUserData() {
-    setUsername(session?.name ?? "");
-    setEmail(session?.email ?? "");
+    if (!session) {
+      setRegisterCountdown(REGISTER_REDIRECT_SECONDS);
+      return;
+    }
+    setUsername(session.name ?? "");
+    setEmail(session.email ?? "");
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -70,6 +69,7 @@ export function FeedbackDialog({ open, onOpenChange }: FooterDialogProps) {
   }
 
   return (
+    <>
     <Dialog.Root open={open} onOpenChange={handleOpenChange}>
       <Dialog.Portal>
         <Dialog.Overlay className="site-dialog-overlay" />
@@ -100,5 +100,19 @@ export function FeedbackDialog({ open, onOpenChange }: FooterDialogProps) {
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
+    <Dialog.Root open={registerCountdown !== null} onOpenChange={(nextOpen) => !nextOpen && setRegisterCountdown(null)}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="site-dialog-overlay" />
+        <Dialog.Content className="site-dialog">
+          <Dialog.Title className="site-dialog-title">Нужна регистрация</Dialog.Title>
+          <Dialog.Description className="site-dialog-text">Чтобы заполнить данные автоматически, создайте аккаунт. Перенаправим вас на страницу регистрации через {registerCountdown} с.</Dialog.Description>
+          <div className="site-dialog-actions">
+            <button type="button" className="site-dialog-secondary" onClick={() => setRegisterCountdown(null)}>Остаться</button>
+          </div>
+          <Dialog.Close className="site-dialog-close" aria-label="Закрыть">×</Dialog.Close>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
+    </>
   );
 }
