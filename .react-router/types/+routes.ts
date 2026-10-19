@@ -27,6 +27,9 @@ type Pages = {
       "sectionId": string;
     };
   };
+  "/journey": {
+    params: {};
+  };
   "/welcome": {
     params: {};
   };
@@ -50,7 +53,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/history/:figureId" | "/lectures" | "/lectures/:sectionId" | "/welcome" | "/about" | "/eras" | "/eras/romanov" | "/map" | "/new";
+    page: "/" | "/history/:figureId" | "/lectures" | "/lectures/:sectionId" | "/journey" | "/welcome" | "/about" | "/eras" | "/eras/romanov" | "/map" | "/new";
   };
   "routes/history.$figureId.tsx": {
     id: "routes/history.$figureId";
@@ -67,6 +70,10 @@ type RouteFiles = {
   "routes/lectures._index.tsx": {
     id: "routes/lectures._index";
     page: "/lectures";
+  };
+  "routes/journey.tsx": {
+    id: "routes/journey";
+    page: "/journey";
   };
   "routes/welcome.tsx": {
     id: "routes/welcome";
@@ -104,6 +111,7 @@ type RouteModules = {
   "routes/lectures": typeof import("./app/routes/lectures.tsx");
   "routes/lectures.$sectionId": typeof import("./app/routes/lectures.$sectionId.tsx");
   "routes/lectures._index": typeof import("./app/routes/lectures._index.tsx");
+  "routes/journey": typeof import("./app/routes/journey.tsx");
   "routes/welcome": typeof import("./app/routes/welcome.tsx");
   "routes/_index": typeof import("./app/routes/_index.tsx");
   "routes/about": typeof import("./app/routes/about.tsx");

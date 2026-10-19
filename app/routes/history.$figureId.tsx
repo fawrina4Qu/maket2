@@ -24,12 +24,16 @@ export default function HistoryFigureRoute() {
 
   return (
     <SiteLayout>
-      <PageHeading eyebrow={`ГОДЫ ЖИЗНИ И ПРАВЛЕНИЯ · ${figure.years}`} title={<>{figure.name}</>}>{figure.intro}</PageHeading>
+      <header className="figure-hero" style={{ backgroundImage: `url(${figure.image})` }}>
+        <div className="figure-hero-content section-wrap">
+          <h1>{figure.name}</h1>
+          <p className="figure-hero-years">ГОДЫ ЖИЗНИ И ПРАВЛЕНИЯ · {figure.years}</p>
+        </div>
+      </header>
       <section className="section-wrap page-content history-figure">
-        <Link className="lecture-back-link" to="/"><IconArrowLeft size={17} /> На главную</Link>
         <div className="history-figure-layout">
-          <img className="history-figure-image" src={figure.image} alt={figure.name} />
           <div className="history-figure-sections">
+            <p className="history-figure-intro">{figure.intro}</p>
             {figure.sections.map((section) => (
               <article className="history-figure-section" key={section.title}>
                 <h2>{section.title}</h2>

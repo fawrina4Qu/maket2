@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import { LectureGrid } from "@/components/lecture-grid";
 import { PageHeading } from "@/components/page-heading";
 import { SiteLayout } from "@/components/site-layout";

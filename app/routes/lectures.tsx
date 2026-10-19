@@ -1,4 +1,3 @@
-import { IconArrowRight } from "@tabler/icons-react";
 import { Outlet } from "react-router";
 import { SiteLayout } from "@/components/site-layout";
 
