@@ -75,7 +75,7 @@ export function SiteHeader() {
               <IconHeart />
             </button>
           )}
-          {session ? <button aria-label="Выйти из аккаунта" title={session.name ? `Выйти, ${session.name}` : "Выйти из аккаунта"} onClick={() => void signOut({ redirectTo: "/" })}><IconLogout2 /></button> : <NavLink className="header-login" to="/login" title="Войти">Войти</NavLink>}
+          {session ? <button aria-label="Выйти из аккаунта" title={session.name ? `Выйти, ${session.name}` : "Выйти из аккаунта"} onClick={() => void signOut({ redirectTo: "/" })}><IconLogout2 /></button> : <a className="header-login" href="/login" title="Войти">Войти</a>}
         </div>
       </header>
     </>
