@@ -38,6 +38,7 @@ export function SiteHeader() {
     <>
       <div className="topline">Первая лекция бесплатно <span>✦</span> Скидка 10% на первый курс по промокоду <strong>BLOOMHISTORY</strong></div>
       <header className="site-header">
+        <NavLink to="/" className="brand site-name" title="На главную"><span className="brand-mark">✿</span><span>История России <i>для чайников</i></span></NavLink>
         <nav className="main-nav" aria-label="Меню">
           {links.map((link) => (
             <NavLink key={link.to} to={link.to}>{link.label}</NavLink>
@@ -75,7 +76,7 @@ export function SiteHeader() {
               <IconHeart />
             </button>
           )}
-          {session ? <button aria-label="Выйти из аккаунта" title={session.name ? `Выйти, ${session.name}` : "Выйти из аккаунта"} onClick={() => void signOut({ redirectTo: "/" })}><IconLogout2 /></button> : <NavLink className="header-login" to="/login" title="Войти">Войти</NavLink>}
+          {session ? <button aria-label="Выйти из аккаунта" title={session.name ? `Выйти, ${session.name}` : "Выйти из аккаунта"} onClick={() => void signOut({ redirectTo: "/" })}><IconLogout2 /></button> : <a className="header-login" href="/login" title="Войти">Войти</a>}
         </div>
       </header>
     </>
