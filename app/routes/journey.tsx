@@ -1,4 +1,4 @@
-import { IconArrowLeft, IconBooks, IconHourglass, IconMap2 } from "@tabler/icons-react";
+import { IconBooks, IconHourglass, IconMap2 } from "@tabler/icons-react";
 import { Link } from "react-router";
 import { SiteLayout } from "@/components/site-layout";
 
@@ -31,7 +31,6 @@ export default function JourneyRoute() {
   return (
     <SiteLayout showCommunity={false}>
       <section className="journey-page section-wrap">
-        <Link className="lecture-back-link journey-home-link" to="/"><IconArrowLeft size={17} /> На главную</Link>
         <div className="journey-grid">
           {destinations.map(({ to, title, icon: Icon, text }) => (
             <Link className="journey-block" to={to} key={to}>

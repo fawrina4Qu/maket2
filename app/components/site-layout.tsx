@@ -1,5 +1,5 @@
 import { useState, type FormEvent, type ReactNode } from "react";
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { IconArrowRight } from "@tabler/icons-react";
 import { Link, NavLink } from "react-router";
 import { FavoritesOverlay } from "@/components/favorites-overlay";
 import { FeedbackDialog, NewsletterDialog } from "@/components/footer-dialogs";
@@ -29,7 +29,6 @@ export function SiteLayout({ children, showCommunity = true, showFooter = true }
       {showCommunity && <section className="community section-wrap">
         <div className="section-heading">
           <div><p className="eyebrow">МЫ УЧИМСЯ ВМЕСТЕ</p><h2>История России <em>для чайников</em></h2><p className="section-sub">История становится ближе, когда ей делятся.</p></div>
-          <div className="community-actions"><Link className="community-home-link" to="/" aria-label="Вернуться на главную"><IconArrowLeft size={16} /> На главную</Link></div>
         </div>
         <HistoryTiles />
       </section>}

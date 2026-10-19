@@ -26,7 +26,6 @@ export default function HistoryFigureRoute() {
     <SiteLayout>
       <header className="figure-hero" style={{ backgroundImage: `url(${figure.image})` }}>
         <div className="figure-hero-content section-wrap">
-          <Link className="lecture-back-link" to="/"><IconArrowLeft size={17} /> На главную</Link>
           <h1>{figure.name}</h1>
           <p className="figure-hero-years">ГОДЫ ЖИЗНИ И ПРАВЛЕНИЯ · {figure.years}</p>
         </div>
