@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { IconArrowRight } from "@tabler/icons-react";
 import { Link } from "react-router";
 import { SiteLayout } from "@/components/site-layout";
-import { historyFigures } from "@/lib/history-figures";
 
 const slides = [
   "https://cdn.builder.io/api/v1/image/assets%2F0dd7a88752e6455cbcf048c9abc741ed%2F4c3256c7e3024ebf93ece5bc5b3fb8d3?format=webp&width=800&height=1200",
@@ -44,20 +43,6 @@ export function WelcomeView() {
           ))}
         </div>
         <div className="hero-caption"><span>{String(activeSlide + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}</span><span>ИСТОРИЯ, КОТОРАЯ ОЖИВАЕТ</span></div>
-      </section>
-      <section className="history-block section-wrap" id="history">
-        <div className="section-heading">
-          <div><p className="eyebrow">ПРАВИТЕЛИ РОССИИ</p><h2>История России <em>для чайников</em></h2></div>
-        </div>
-        <div className="history-grid">
-          {historyFigures.map((figure) => (
-            <Link className="history-tile" to={`/history/${figure.id}`} key={figure.id}>
-              <img src={figure.image} alt={figure.name} loading="lazy" />
-              <span>{figure.years}</span>
-              <h3>{figure.name}</h3>
-            </Link>
-          ))}
-        </div>
       </section>
     </SiteLayout>
   );
