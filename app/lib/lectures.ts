@@ -88,3 +88,7 @@ export const lectureSections: LectureSection[] = [
 ];
 
 export const newLectures = lectureSections.flatMap((section) => section.lectures).filter((lecture) => lecture.isNew);
+
+export const allLectures = lectureSections.flatMap((section) =>
+  section.lectures.map((lecture, index) => ({ ...lecture, sectionId: section.id, sectionTitle: section.title, number: index + 1 })),
+);

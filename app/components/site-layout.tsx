@@ -26,9 +26,8 @@ export function SiteLayout({ children, showCommunity = true, showFooter = true }
       {showFooter && <footer className="site-footer" id="footer">
         <div className="footer-main section-wrap">
           <div className="footer-brand"><NavLink to="/" className="brand site-name"><span className="brand-mark">✿</span><span>История России <i>для чайников</i></span></NavLink><p>История в розовом свете.</p><span className="footer-copyright">© 2025 ИСТОРИЯ РОССИИ</span></div>
-          <div className="footer-column"><h3>Обучение</h3><NavLink to="/lectures">Лекции</NavLink><NavLink to="/favorites">Любимые курсы</NavLink><NavLink to="/eras">Эпохи</NavLink><NavLink to="/map">Интерактивная карта</NavLink></div>
-          <div className="footer-column"><h3>Помощь</h3><Link to="/#blossomhistory">Контакты</Link><Link to="/#blossomhistory">Поддержка</Link><Link to="/#blossomhistory">Условия</Link></div>
-          <div className="footer-column"><h3>О проекте</h3><NavLink to="/about">Наша миссия</NavLink><NavLink to="/about">Об основателе</NavLink></div>
+          <div className="footer-column"><h3>Контакты</h3><p>+7 (495) 318-27-64</p><p>hello@istoriya-chaynikov.ru</p><p>Москва, ул. Лесная, 14, оф. 302</p><Link to="/#blossomhistory">Поддержка</Link></div>
+          <div className="footer-column"><h3>О проекте</h3><NavLink to="/about#mission">Наша миссия</NavLink></div>
           <div className="footer-newsletter"><h3>Письма с историей</h3><p>Красивые открытия и новые лекции — раз в неделю.</p><form onSubmit={(event) => event.preventDefault()}><input type="email" required placeholder="Ваш email" aria-label="Ваш email" /><button type="submit" aria-label="Подписаться"><IconArrowRight /></button></form><small>Подписываясь, вы соглашаетесь с политикой конфиденциальности.</small></div>
         </div>
         <div className="footer-bottom section-wrap"><span>СОЗДАНО С ЛЮБОВЬЮ К ИСТОРИИ</span><span>МОСКВА · ВЕЗДЕ</span><Link to="/#home">НАВЕРХ ↑</Link></div>
