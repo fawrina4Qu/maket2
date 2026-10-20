@@ -22,7 +22,16 @@ type Pages = {
   "/lectures": {
     params: {};
   };
+  "/lectures/vladimir-baptism": {
+    params: {};
+  };
+  "/lectures/olga-svyatoslav": {
+    params: {};
+  };
   "/lectures/eastern-slavs": {
+    params: {};
+  };
+  "/lectures/yaroslav-wise": {
     params: {};
   };
   "/lectures/:sectionId": {
@@ -56,7 +65,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/history/:figureId" | "/lectures" | "/lectures/eastern-slavs" | "/lectures/:sectionId" | "/journey" | "/welcome" | "/about" | "/eras" | "/eras/romanov" | "/map" | "/new";
+    page: "/" | "/history/:figureId" | "/lectures" | "/lectures/vladimir-baptism" | "/lectures/olga-svyatoslav" | "/lectures/eastern-slavs" | "/lectures/yaroslav-wise" | "/lectures/:sectionId" | "/journey" | "/welcome" | "/about" | "/eras" | "/eras/romanov" | "/map" | "/new";
   };
   "routes/history.$figureId.tsx": {
     id: "routes/history.$figureId";
@@ -64,11 +73,23 @@ type RouteFiles = {
   };
   "routes/lectures.tsx": {
     id: "routes/lectures";
-    page: "/lectures" | "/lectures/eastern-slavs" | "/lectures/:sectionId";
+    page: "/lectures" | "/lectures/vladimir-baptism" | "/lectures/olga-svyatoslav" | "/lectures/eastern-slavs" | "/lectures/yaroslav-wise" | "/lectures/:sectionId";
+  };
+  "routes/lectures.vladimir-baptism.tsx": {
+    id: "routes/lectures.vladimir-baptism";
+    page: "/lectures/vladimir-baptism";
+  };
+  "routes/lectures.olga-svyatoslav.tsx": {
+    id: "routes/lectures.olga-svyatoslav";
+    page: "/lectures/olga-svyatoslav";
   };
   "routes/lectures.eastern-slavs.tsx": {
     id: "routes/lectures.eastern-slavs";
     page: "/lectures/eastern-slavs";
+  };
+  "routes/lectures.yaroslav-wise.tsx": {
+    id: "routes/lectures.yaroslav-wise";
+    page: "/lectures/yaroslav-wise";
   };
   "routes/lectures.$sectionId.tsx": {
     id: "routes/lectures.$sectionId";
@@ -116,7 +137,10 @@ type RouteModules = {
   "root": typeof import("./app/root.tsx");
   "routes/history.$figureId": typeof import("./app/routes/history.$figureId.tsx");
   "routes/lectures": typeof import("./app/routes/lectures.tsx");
+  "routes/lectures.vladimir-baptism": typeof import("./app/routes/lectures.vladimir-baptism.tsx");
+  "routes/lectures.olga-svyatoslav": typeof import("./app/routes/lectures.olga-svyatoslav.tsx");
   "routes/lectures.eastern-slavs": typeof import("./app/routes/lectures.eastern-slavs.tsx");
+  "routes/lectures.yaroslav-wise": typeof import("./app/routes/lectures.yaroslav-wise.tsx");
   "routes/lectures.$sectionId": typeof import("./app/routes/lectures.$sectionId.tsx");
   "routes/lectures._index": typeof import("./app/routes/lectures._index.tsx");
   "routes/journey": typeof import("./app/routes/journey.tsx");
