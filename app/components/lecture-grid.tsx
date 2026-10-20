@@ -1,4 +1,5 @@
 import { IconHeart } from "@tabler/icons-react";
+import { Link } from "react-router";
 import { toggleLectureFavorite, useLectureFavorites } from "@/lib/favorites-store";
 import { Lecture } from "@/lib/lectures";
 
@@ -12,7 +13,13 @@ export function LectureGrid({ lectures }: { lectures: Lecture[] }) {
         return (
           <article className="lecture-card" id={`lecture-${index + 1}`} key={lecture.title}>
             <div className="lecture-image">
-              <img src={lecture.image} alt={`Иллюстрация: ${lecture.title}`} loading="lazy" />
+              {lecture.to ? (
+                <Link className="lecture-image-link" to={lecture.to} aria-label={`Открыть конспект: ${lecture.title}`}>
+                  <img src={lecture.image} alt={`Иллюстрация: ${lecture.title}`} loading="lazy" />
+                </Link>
+              ) : (
+                <img src={lecture.image} alt={`Иллюстрация: ${lecture.title}`} loading="lazy" />
+              )}
               {lecture.isNew && <span className="lecture-tag">НОВАЯ ЛЕКЦИЯ</span>}
               <button
                 className={`lecture-favorite${isFavorite ? " is-favorite" : ""}`}
