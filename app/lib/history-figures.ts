@@ -18,7 +18,7 @@ export const historyFigures: HistoryFigure[] = [
     id: "nikolai-1",
     name: "Николай I",
     years: "1796–1855",
-    image: "https://cdn.builder.io/api/v1/image/assets%2Fea65239317b743bf8d8dc65c58275bf7%2F6b3862eda63d40af893d3a6c3c312afc?format=webp&width=800&height=1200",
+    image: "https://cdn.builder.io/api/v1/image/assets%2Fea65239317b743bf8d8dc65c58275bf7%2F6b3862eda63d40af893d3a6c3c312afc?format=webp&width=960&quality=70",
     intro: "Третий сын императора Павла I и брат Александра I. Вступил на престол в декабре 1825 года, сразу столкнувшись с восстанием декабристов, которое оставило глубокий след в его мировоззрении и задало тон всему правлению. Был женат на прусской принцессе Шарлотте (в православии — Александра Фёдоровна).",
     sections: [
       {
@@ -55,7 +55,7 @@ export const historyFigures: HistoryFigure[] = [
     id: "petr-1",
     name: "Пётр I",
     years: "1672–1725",
-    image: "https://cdn.builder.io/api/v1/image/assets%2Fea65239317b743bf8d8dc65c58275bf7%2Fa6b6b4e99ec64d36a4344a8d3205c980?format=webp&width=800&height=1200",
+    image: "https://cdn.builder.io/api/v1/image/assets%2Fea65239317b743bf8d8dc65c58275bf7%2Fa6b6b4e99ec64d36a4344a8d3205c980?format=webp&width=960&quality=70",
     intro: "Годы правления: 1682–1725 (самостоятельно с 1689). Титул: последний царь всея Руси и первый Император Всероссийский (с 1721 г.).",
     sections: [
       {
@@ -93,7 +93,7 @@ export const historyFigures: HistoryFigure[] = [
     id: "ekaterina-2",
     name: "Екатерина II",
     years: "1762–1796",
-    image: "https://cdn.builder.io/api/v1/image/assets%2Fea65239317b743bf8d8dc65c58275bf7%2F4e76bda4ed5642ba8d745d74124e9642?format=webp&width=800&height=1200",
+    image: "https://cdn.builder.io/api/v1/image/assets%2Fea65239317b743bf8d8dc65c58275bf7%2F4e76bda4ed5642ba8d745d74124e9642?format=webp&width=960&quality=70",
     intro: "Императрица и Самодержица Всероссийская. Урождённая принцесса София Августа Фредерика Анхальт-Цербстская, родилась в прусском Штеттине. В 1744 году прибыла в Россию как невеста наследника престола Петра Фёдоровича (будущего Петра III), приняла православие с именем Екатерина Алексеевна. Брак был неудачным. В 1762 году, опираясь на гвардию (братьев Орловых), совершила дворцовый переворот, свергла мужа и взошла на престол.",
     sections: [
       {
@@ -129,7 +129,7 @@ export const historyFigures: HistoryFigure[] = [
     id: "nikolai-2",
     name: "Николай II",
     years: "1894–1917",
-    image: "https://cdn.builder.io/api/v1/image/assets%2Fea65239317b743bf8d8dc65c58275bf7%2Fee7e6764c0fd40b8a7eb6c297a4168e9?format=webp&width=800&height=1200",
+    image: "https://cdn.builder.io/api/v1/image/assets%2Fea65239317b743bf8d8dc65c58275bf7%2Fee7e6764c0fd40b8a7eb6c297a4168e9?format=webp&width=960&quality=70",
     intro: "Последний император Всероссийский. Старший сын Александра III и Марии Фёдоровны. Вступил на престол в 1894 году после скоропостижной смерти отца. Был убеждённым сторонником самодержавия, однако его правление совпало с эпохой войн и революций. В 1894 году женился на принцессе Алисе Гессенской (в православии — Александра Фёдоровна). В семье родилось пятеро детей; долгожданный наследник Алексей страдал неизлечимой болезнью — гемофилией.",
     sections: [
       {
@@ -159,7 +159,7 @@ export const historyFigures: HistoryFigure[] = [
     id: "aleksandr-2",
     name: "Александр II",
     years: "1855–1881",
-    image: "https://cdn.builder.io/api/v1/image/assets%2Fea65239317b743bf8d8dc65c58275bf7%2F948ad99ff3e64a67a84cf3c4f86f8744?format=webp&width=800&height=1200",
+    image: "https://cdn.builder.io/api/v1/image/assets%2Fea65239317b743bf8d8dc65c58275bf7%2F948ad99ff3e64a67a84cf3c4f86f8744?format=webp&width=960&quality=70",
     intro: "Прозвище: Освободитель. Старший сын Николая I. Воспитывался под руководством поэта В. А. Жуковского. Вступил на престол в 1855 году в тяжёлый для страны период — в разгар проигранной Крымской войны. Вошёл в историю как царь-реформатор, осуществивший масштабные преобразования, получившие название «Великие реформы».",
     sections: [
       {

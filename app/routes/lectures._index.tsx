@@ -1,5 +1,6 @@
 import { IconArrowRight } from "@tabler/icons-react";
 import { Link } from "react-router";
+import { HomeLink } from "@/components/home-link";
 import { lectureSections } from "@/lib/lectures";
 import { PageHeading } from "@/components/page-heading";
 
@@ -10,7 +11,7 @@ export function meta() {
 export default function LecturesIndexRoute() {
   return (
     <>
-      <PageHeading eyebrow="ЛЕКЦИИ ПО ЭПОХАМ" title={<>История по <em>разделам</em></>}>Выберите период, чтобы открыть подборку лекций и пройти путь от первых князей до современной России.</PageHeading>
+      <PageHeading eyebrow="ЛЕКЦИИ ПО ЭПОХАМ" title={<>История по <em>разделам</em></>} afterCopy={<HomeLink inline />}>Выберите период, чтобы открыть подборку лекций и пройти путь от первых князей до современной России.</PageHeading>
       <section className="lecture-sections section-wrap page-content">
         {lectureSections.map((section, index) => (
           <Link className="lecture-section-card" to={`/lectures/${section.id}`} key={section.id}>

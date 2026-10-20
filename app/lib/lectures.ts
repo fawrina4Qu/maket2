@@ -13,7 +13,7 @@ export interface LectureSection {
   lectures: Lecture[];
 }
 
-const image = (id: string) => `https://cdn.builder.io/api/v1/image/assets%2F00a9bc1a46c643ac900551296cbc3a27%2F${id}?format=webp&width=800&height=1200`;
+const image = (id: string) => `https://cdn.builder.io/api/v1/image/assets%2F00a9bc1a46c643ac900551296cbc3a27%2F${id}?format=webp&width=640&quality=65`;
 
 export const lectureSections: LectureSection[] = [
   {
