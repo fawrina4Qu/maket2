@@ -1,4 +1,5 @@
 import { IconArrowLeft } from "@tabler/icons-react";
+import { useEffect } from "react";
 import { Link, useParams } from "react-router";
 import { PageHeading } from "@/components/page-heading";
 import { SiteLayout } from "@/components/site-layout";
@@ -12,6 +13,11 @@ export function meta({ params }: { params: { figureId?: string } }) {
 export default function HistoryFigureRoute() {
   const { figureId } = useParams();
   const figure = historyFigures.find((item) => item.id === figureId);
+
+  useEffect(() => {
+    const scroller = document.querySelector<HTMLElement>(".agent-native-app-main") ?? window;
+    scroller.scrollTo({ top: 0, behavior: "smooth" });
+  }, [figureId]);
 
   if (!figure) {
     return (
