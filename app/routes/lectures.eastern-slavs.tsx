@@ -40,9 +40,19 @@ const pages = [
       { label: "Торговля", text: "путь «из варяг в греки»" },
     ],
   },
+  {
+    title: "Общественный строй и верования",
+    paragraphs: [
+      "Происходил переход от родовой общины к соседской (территориальной). Появлялось имущественное неравенство и складывалась знать: князья, дружина и старейшины.",
+    ],
+    items: [
+      { label: "Управление", text: "народное собрание — вече; важные вопросы решались сообща" },
+      { label: "Религия", text: "язычество (политеизм). Перун — гром, молния и покровитель воинов; Велес — скот и богатство; Сварог — кузнечное дело и небо; Мокошь — женское начало и плодородие. Также верили в домовых, леших и русалок" },
+    ],
+  },
 ];
 
-const mapImage = "https://cdn.builder.io/api/v1/image/assets%2F3b201758f3a8485faf936b068ebfab52%2F33dfd2b7e7c94b3cbf16671dbcb435ca?format=webp&width=800&height=1200";
+const videoUrl = "https://www.youtube.com/embed/cW2E00xFt5s";
 
 export function meta() {
   return [{ title: "Восточные славяне — конспект" }];
@@ -72,8 +82,15 @@ export default function EasternSlavsNotesRoute() {
       </PageHeading>
       <section className="slavic-notes section-wrap" aria-label="Конспект: Восточные славяне">
         <Link className="lecture-back-link" to="/lectures/ancient-rus"><IconArrowLeft size={17} /> Все лекции Древней Руси</Link>
-        <figure className="slavic-notes-image">
-          <img src={mapImage} alt="Карта расселения славян в Восточной Европе в V–VII веках" />
+        <figure className="slavic-notes-video">
+          <iframe
+            src={videoUrl}
+            title="Видео о восточных славянах"
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
         </figure>
         <section className="slavic-notes-page" aria-live="polite">
           <p className="eyebrow">СТРАНИЦА {activePage + 1} ИЗ {pages.length}</p>

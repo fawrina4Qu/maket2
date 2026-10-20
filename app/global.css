@@ -440,8 +440,8 @@
 .about-founder .founder-photo { padding-bottom:10px; }
 .slavic-notes { padding-bottom:90px; }
 .slavic-notes > .lecture-back-link { display:inline-flex; margin:0 0 22px; }
-.slavic-notes-image { margin:0 0 30px; border:1px solid #e4d5c9; background:#f4f1ea; }
-.slavic-notes-image img { display:block; width:100%; max-height:65vh; object-fit:contain; object-position:left center; }
+.slavic-notes-video { margin:0 0 30px; border:1px solid #e4d5c9; background:#f4f1ea; }
+.slavic-notes-video iframe { display:block; width:100%; aspect-ratio:16 / 9; border:0; }
 .slavic-notes-page { max-width:850px; padding:clamp(24px,4vw,42px); background:#fffaf8; border:1px solid #f0e3df; }
 .slavic-notes-page .eyebrow { margin-bottom:12px; }
 .slavic-notes-page h2 { margin:0 0 18px; color:#603f40; font:400 clamp(28px,4vw,40px)/1.1 Georgia,serif; }
@@ -453,4 +453,4 @@
 .slavic-notes-pagination button { display:grid; min-width:42px; height:42px; place-items:center; border:1px solid #e2c9c2; background:#fffaf8; color:#815c5d; cursor:pointer; }
 .slavic-notes-pagination button:hover,.slavic-notes-pagination .is-active { border-color:#b96879; background:#b96879; color:#fff; }
 .slavic-notes-pagination .slavic-notes-arrow { border-radius:50%; }
-@media (max-width:650px) { .slavic-notes { padding-bottom:64px; }.slavic-notes-image { margin-bottom:20px; }.slavic-notes-image img { max-height:52vh; }.slavic-notes-page { padding:22px 18px; }.slavic-notes-page p,.slavic-notes-page li { font-size:13px; }.slavic-notes-pagination { gap:6px; }.slavic-notes-pagination button { min-width:38px; height:38px; } }
+@media (max-width:650px) { .slavic-notes { padding-bottom:64px; }.slavic-notes-video { margin-bottom:20px; }.slavic-notes-page { padding:22px 18px; }.slavic-notes-page p,.slavic-notes-page li { font-size:13px; }.slavic-notes-pagination { gap:6px; }.slavic-notes-pagination button { min-width:38px; height:38px; } }
