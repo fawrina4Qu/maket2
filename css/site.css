@@ -11,6 +11,18 @@ img { max-width: 100%; }
 .site-name { text-decoration: none; }
 .footer-column-button { display: inline-block; color: #dac5bf; font-size: 9px; text-decoration: none; }
 .newsletter-link { display: inline-block; margin: 0 0 8px; color: #f4ded9; font-size: 10px; }
+.registration-main { display: grid; min-height: 68vh; place-items: center; padding: 56px 20px 72px; }
+.registration-card { width: min(100%, 480px); padding: clamp(26px, 6vw, 46px); border: 1px solid #ead9d4; background: #fffaf8; box-shadow: 0 22px 60px #62434712; }
+.registration-home { display: inline-block; margin-bottom: 26px; color: #985968; font-size: 11px; text-decoration: none; }
+.registration-card .eyebrow { margin: 0 0 12px; text-align: center; }
+.registration-card h1 { margin: 0; color: #743d4a; font: 400 clamp(30px, 7vw, 38px)/1.12 Georgia, serif; text-align: center; }
+.registration-copy { margin: 12px 0 26px; color: #927471; font: italic 14px/1.6 Georgia, serif; text-align: center; }
+.registration-card form { display: grid; gap: 17px; }
+.registration-field { display: grid; gap: 7px; color: #8a6a67; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.registration-field input { width: 100%; min-height: 43px; padding: 10px 12px; border: 1px solid #e0c4bd; border-radius: 3px; background: #fff; color: #603f40; font-size: 14px; letter-spacing: normal; text-transform: none; }
+.registration-field input:focus { border-color: #b76b78; outline: 2px solid #b76b7830; }
+.registration-submit { width: 100%; margin-top: 4px; border-radius: 4px; cursor: default; }
+.registration-note { margin: 18px 0 0; color: #927876; font-size: 11px; line-height: 1.6; text-align: center; }
 .static-info { min-height: 65vh; padding: 90px 0; }
 .static-info h1 { margin: 0; color: #603f40; font: 400 clamp(43px, 6vw, 72px)/1.04 Georgia, serif; letter-spacing: -.045em; }
 .static-info h1 em { color: #b76b78; }
