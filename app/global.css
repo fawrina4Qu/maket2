@@ -435,3 +435,5 @@
 .journey-block p { margin:0; font-size:14px; line-height:1.75; color:#68504d; }
 .journey-page { display:flex; flex-direction:column; justify-content:center; min-height:60vh; padding:80px 0; }
 @media (max-width:900px) { .journey-grid { grid-template-columns:1fr; } }
+.about-founder { padding-top:28px; padding-bottom:28px; }
+.about-founder .founder-photo { padding-bottom:10px; }
