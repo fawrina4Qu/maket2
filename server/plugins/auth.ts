@@ -78,7 +78,7 @@ const loginHtml = `<!doctype html>
       var loginTab=document.getElementById("loginTab");
       var signupForm=document.getElementById("signupForm");
       var loginForm=document.getElementById("loginForm");
-      signupForm.elements.promoCode.value=locationParams.get("promo")||"";
+      signupForm.querySelector('input[name="promoCode"]').value=locationParams.get("promo")||"";
       var heading=document.getElementById("heading");
       var subcopy=document.getElementById("subcopy");
       var error=document.getElementById("error");
