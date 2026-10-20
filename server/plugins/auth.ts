@@ -32,6 +32,7 @@ const loginHtml = `<!doctype html>
     <nav class="lp-nav" aria-label="Меню"><a href="/new">Новинки</a><a href="/map">Интерактивная карта</a><a href="/lectures">Лекции</a><a href="/eras">Ключевые эпохи</a><a href="/about">О нас</a></nav>
   </header>
   <div class="auth-main"><div class="auth-wrap">
+    <a class="auth-home-link" href="/">← На главную</a>
     <section class="auth-card">
       <p class="eyebrow">ИСТОРИЯ НАЧИНАЕТСЯ С ВАС</p>
       <h1 id="heading">Создать аккаунт</h1>
@@ -40,7 +41,6 @@ const loginHtml = `<!doctype html>
         <button type="button" role="tab" id="signupTab" aria-selected="true">Регистрация</button>
         <button type="button" role="tab" id="loginTab" aria-selected="false">Войти</button>
       </div>
-      <a class="auth-home-link" href="/">← На главную</a>
       <form id="signupForm">
         <label class="field"><span>ЮЗЕРНЕЙМ</span><input name="username" autocomplete="nickname" minlength="2" maxlength="120" required></label>
         <label class="field"><span>АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ</span><input name="email" type="email" autocomplete="email" required></label>
