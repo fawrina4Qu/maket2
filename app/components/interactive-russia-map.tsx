@@ -8,7 +8,7 @@ const mapCities = [
     left: 22,
     founded: "1147 г.",
     history: "Московское княжество",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F00a9bc1a46c643ac900551296cbc3a27%2Fc1ba7c66eb1347a492d1bbaa49589a5c?format=webp&width=800&height=1200",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F00a9bc1a46c643ac900551296cbc3a27%2Fc1ba7c66eb1347a492d1bbaa49589a5c?format=webp&width=400&quality=65",
     facts: [
       "Юрий Долгорукий считается основателем Москвы.",
       "В 1812 году Москва была занята Наполеоном.",
@@ -90,7 +90,7 @@ const mapCities = [
 ];
 
 const mapImage =
-  "https://cdn.builder.io/api/v1/image/assets%2F00a9bc1a46c643ac900551296cbc3a27%2F6fef30a8b1b54fe5b423930537929011?format=webp&width=800&height=1200";
+  "https://cdn.builder.io/api/v1/image/assets%2F00a9bc1a46c643ac900551296cbc3a27%2F6fef30a8b1b54fe5b423930537929011?format=webp&width=640&quality=60";
 
 type MapCity = (typeof mapCities)[number];
 

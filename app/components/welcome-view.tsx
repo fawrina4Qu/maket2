@@ -5,10 +5,10 @@ import { HistoryTiles } from "@/components/history-tiles";
 import { SiteLayout } from "@/components/site-layout";
 
 const slides = [
-  "https://cdn.builder.io/api/v1/image/assets%2F0dd7a88752e6455cbcf048c9abc741ed%2F4c3256c7e3024ebf93ece5bc5b3fb8d3?format=webp&width=800&height=1200",
-  "https://cdn.builder.io/api/v1/image/assets%2F0dd7a88752e6455cbcf048c9abc741ed%2Fe4fb379449b8426aae1c863246bd1021?format=webp&width=800&height=1200",
-  "https://cdn.builder.io/api/v1/image/assets%2F0dd7a88752e6455cbcf048c9abc741ed%2F118d24e907aa45a4afd93ee160fcf643?format=webp&width=800&height=1200",
-  "https://cdn.builder.io/api/v1/image/assets%2F00a9bc1a46c643ac900551296cbc3a27%2F2e9ffbd5bf8a43088286ef00e3d2bb1b?format=webp&width=800&height=1200",
+  "https://cdn.builder.io/api/v1/image/assets%2F0dd7a88752e6455cbcf048c9abc741ed%2F4c3256c7e3024ebf93ece5bc5b3fb8d3?format=webp&width=640&quality=65",
+  "https://cdn.builder.io/api/v1/image/assets%2F0dd7a88752e6455cbcf048c9abc741ed%2Fe4fb379449b8426aae1c863246bd1021?format=webp&width=640&quality=65",
+  "https://cdn.builder.io/api/v1/image/assets%2F0dd7a88752e6455cbcf048c9abc741ed%2F118d24e907aa45a4afd93ee160fcf643?format=webp&width=640&quality=65",
+  "https://cdn.builder.io/api/v1/image/assets%2F00a9bc1a46c643ac900551296cbc3a27%2F2e9ffbd5bf8a43088286ef00e3d2bb1b?format=webp&width=640&quality=65",
 ];
 
 const SLIDE_INTERVAL_MS = 6000;
@@ -21,12 +21,17 @@ export function WelcomeView() {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const nextImage = new Image();
+    nextImage.src = slides[(activeSlide + 1) % slides.length];
+  }, [activeSlide]);
+
   return (
     <SiteLayout showCommunity={false} showHomeLink={false}>
       <section className="hero" id="welcome">
         <div className="hero-carousel">
           {slides.map((src, index) => (
-            <img key={src} className={index === activeSlide ? "hero-slide is-active" : "hero-slide"} src={src} alt="" aria-hidden={index !== activeSlide} />
+            <img key={src} className={index === activeSlide ? "hero-slide is-active" : "hero-slide"} src={index === activeSlide ? src : undefined} alt="" aria-hidden={index !== activeSlide} fetchPriority={index === activeSlide ? "high" : "auto"} />
           ))}
         </div>
         <div className="hero-content">
