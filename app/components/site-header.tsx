@@ -36,7 +36,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <div className="topline">Первая лекция бесплатно <span>✦</span> Скидка 10% на первый курс по промокоду <Link to="/login?promo=HIST_CHAINIK"><strong>HIST_CHAINIK</strong></Link></div>
+      <div className="topline">Первая лекция бесплатно <span>✦</span> Скидка 10% на первый курс по промокоду <a href="/login?promo=HIST_CHAINIK"><strong>HIST_CHAINIK</strong></a></div>
       <header className="site-header">
         <NavLink to="/" className="brand site-name" title="На главную"><span className="brand-mark">✿</span><span>История России <i>для чайников</i></span></NavLink>
         <nav className="main-nav" aria-label="Меню">
