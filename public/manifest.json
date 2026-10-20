@@ -1,7 +1,7 @@
 {
-  "name": "App",
-  "short_name": "App",
-  "description": "Agent-Native app starter ready to customize",
+  "name": "История России для чайников",
+  "short_name": "История России",
+  "description": "История в розовом свете.",
   "start_url": "./",
   "background_color": "#111111",
   "theme_color": "#18181B",

@@ -1,26 +1,27 @@
-# My App
+# История России для чайников
 
-An app built with [Builder.io](https://www.builder.io) on the
-[Agent-Native](https://agent-native.com?utm_source=github&utm_medium=referral&utm_content=fusion-starter-readme) framework. Replace this paragraph with
-what the app does and who it's for.
+Статический сайт на HTML, CSS и JavaScript. Без фреймворков, без бэкенда и без TypeScript.
 
-## Develop locally
+## Запуск локально
 
 ```bash
-cp .env.example .env
-corepack enable
-pnpm install
 pnpm dev
 ```
 
-`.env.example` sets `AUTH_DISABLED=true` as a commented-out option; uncomment it
-to skip sign-in while developing.
+Сервер поднимается на корне проекта и отдаёт страницы как есть.
 
-## Project layout
+## Сборка
 
-- `app/`: routes and UI components
-- `actions/`: operations shared by the UI and the app's agent
-- `server/`: server plugins and the database client
-- `drizzle/`: schema and migrations; start with `drizzle/START_HERE.md`
+```bash
+pnpm build
+```
 
-Framework docs: [agent-native.com/docs](https://agent-native.com/docs?utm_source=github&utm_medium=referral&utm_content=fusion-starter-readme).
+Готовый сайт появится в папке `dist`. Команда `pnpm start` запускает локальный сервер для этой папки.
+
+## Структура
+
+- `index.html` и папки с разделами (`lectures/`, `history/`, `eras/`, `map/` и др.) — страницы сайта
+- `css/site.css` — стили
+- `js/` — скрипты (данные, карта, конспекты, избранное)
+- `public/` — иконки и манифест
+- `scripts/` — сборка и локальный сервер
