@@ -22,6 +22,9 @@ type Pages = {
   "/lectures": {
     params: {};
   };
+  "/lectures/vladimir-baptism": {
+    params: {};
+  };
   "/lectures/olga-svyatoslav": {
     params: {};
   };
@@ -59,7 +62,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/history/:figureId" | "/lectures" | "/lectures/olga-svyatoslav" | "/lectures/eastern-slavs" | "/lectures/:sectionId" | "/journey" | "/welcome" | "/about" | "/eras" | "/eras/romanov" | "/map" | "/new";
+    page: "/" | "/history/:figureId" | "/lectures" | "/lectures/vladimir-baptism" | "/lectures/olga-svyatoslav" | "/lectures/eastern-slavs" | "/lectures/:sectionId" | "/journey" | "/welcome" | "/about" | "/eras" | "/eras/romanov" | "/map" | "/new";
   };
   "routes/history.$figureId.tsx": {
     id: "routes/history.$figureId";
@@ -67,7 +70,11 @@ type RouteFiles = {
   };
   "routes/lectures.tsx": {
     id: "routes/lectures";
-    page: "/lectures" | "/lectures/olga-svyatoslav" | "/lectures/eastern-slavs" | "/lectures/:sectionId";
+    page: "/lectures" | "/lectures/vladimir-baptism" | "/lectures/olga-svyatoslav" | "/lectures/eastern-slavs" | "/lectures/:sectionId";
+  };
+  "routes/lectures.vladimir-baptism.tsx": {
+    id: "routes/lectures.vladimir-baptism";
+    page: "/lectures/vladimir-baptism";
   };
   "routes/lectures.olga-svyatoslav.tsx": {
     id: "routes/lectures.olga-svyatoslav";
@@ -123,6 +130,7 @@ type RouteModules = {
   "root": typeof import("./app/root.tsx");
   "routes/history.$figureId": typeof import("./app/routes/history.$figureId.tsx");
   "routes/lectures": typeof import("./app/routes/lectures.tsx");
+  "routes/lectures.vladimir-baptism": typeof import("./app/routes/lectures.vladimir-baptism.tsx");
   "routes/lectures.olga-svyatoslav": typeof import("./app/routes/lectures.olga-svyatoslav.tsx");
   "routes/lectures.eastern-slavs": typeof import("./app/routes/lectures.eastern-slavs.tsx");
   "routes/lectures.$sectionId": typeof import("./app/routes/lectures.$sectionId.tsx");
