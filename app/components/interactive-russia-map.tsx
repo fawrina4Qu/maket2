@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { IconArrowRight, IconFlower, IconX } from "@tabler/icons-react";
+import { HomeLink } from "@/components/home-link";
 
 const mapCities = [
   {
@@ -115,6 +116,7 @@ export function InteractiveRussiaMap() {
           </div>
           <p className="map-intro">Нажмите на отметку, чтобы открыть короткую историю города.</p>
         </div>
+        <HomeLink inline />
         <div className="map-paper">
           <div className="map-stage">
             <img src={mapImage} alt="Карта России с отмеченными городами" />

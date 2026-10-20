@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/site-layout";
 
 export default function LecturesLayoutRoute() {
   return (
-    <SiteLayout>
+    <SiteLayout showHomeLink={false}>
       <Outlet />
     </SiteLayout>
   );

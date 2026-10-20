@@ -7,7 +7,7 @@ export function meta() {
 
 export default function MapRoute() {
   return (
-    <SiteLayout>
+    <SiteLayout showHomeLink={false}>
       <InteractiveRussiaMap />
     </SiteLayout>
   );

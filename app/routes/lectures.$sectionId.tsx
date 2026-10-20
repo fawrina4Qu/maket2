@@ -1,6 +1,7 @@
 import { IconArrowLeft } from "@tabler/icons-react";
 import { useEffect } from "react";
 import { Link, useLocation, useParams } from "react-router";
+import { HomeLink } from "@/components/home-link";
 import { LectureGrid } from "@/components/lecture-grid";
 import { PageHeading } from "@/components/page-heading";
 import { lectureSections } from "@/lib/lectures";
@@ -22,7 +23,7 @@ export default function LectureSectionRoute() {
   if (!section) {
     return (
       <>
-        <PageHeading eyebrow="ЛЕКЦИИ" title={<>Раздел не <em>найден</em></>}>Выберите одну из исторических эпох в каталоге лекций.</PageHeading>
+        <PageHeading eyebrow="ЛЕКЦИИ" title={<>Раздел не <em>найден</em></>} afterCopy={<HomeLink inline />}>Выберите одну из исторических эпох в каталоге лекций.</PageHeading>
         <section className="section-wrap page-content"><Link className="button button-outline" to="/lectures"><IconArrowLeft size={16} /> Все разделы</Link></section>
       </>
     );
@@ -30,7 +31,7 @@ export default function LectureSectionRoute() {
 
   return (
     <>
-      <PageHeading eyebrow={`${section.era} · ${section.lectures.length} ЛЕКЦИЙ`} title={<>{section.title} <em>{section.era}</em></>}>{section.description}</PageHeading>
+      <PageHeading eyebrow={`${section.era} · ${section.lectures.length} ЛЕКЦИЙ`} title={<>{section.title} <em>{section.era}</em></>} afterCopy={<HomeLink inline />}>{section.description}</PageHeading>
       <section className="section-wrap page-content">
         <Link className="lecture-back-link" to="/lectures"><IconArrowLeft size={17} /> Все разделы лекций</Link>
         <LectureGrid lectures={section.lectures} />
