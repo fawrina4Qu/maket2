@@ -2,6 +2,7 @@ import { IconArrowLeft } from "@tabler/icons-react";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router";
 import { PageHeading } from "@/components/page-heading";
+import { HomeLink } from "@/components/home-link";
 import { SiteLayout } from "@/components/site-layout";
 import { historyFigures } from "@/lib/history-figures";
 
@@ -29,7 +30,7 @@ export default function HistoryFigureRoute() {
   }
 
   return (
-    <SiteLayout>
+    <SiteLayout showHomeLink={false}>
       <header className="figure-hero" style={{ backgroundImage: `url(${figure.image})` }}>
         <div className="figure-hero-content section-wrap">
           <h1>{figure.name}</h1>
@@ -39,6 +40,7 @@ export default function HistoryFigureRoute() {
       <section className="section-wrap page-content history-figure">
         <div className="history-figure-layout">
           <div className="history-figure-sections">
+            <HomeLink inline />
             <p className="history-figure-intro">{figure.intro}</p>
             {figure.sections.map((section) => (
               <article className="history-figure-section" key={section.title}>
