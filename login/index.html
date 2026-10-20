@@ -19,9 +19,13 @@
     <section class="registration-card" aria-labelledby="registration-title">
       <a class="registration-home" href="/">← На главную</a>
       <p class="eyebrow">ИСТОРИЯ НАЧИНАЕТСЯ С ВАС</p>
+      <div class="auth-tabs" role="tablist" aria-label="Регистрация и авторизация">
+        <button class="auth-tab" type="button" role="tab" id="tab-signup" aria-controls="panel-signup" data-auth-tab="signup" data-title="Создать аккаунт">Регистрация</button>
+        <button class="auth-tab" type="button" role="tab" id="tab-login" aria-controls="panel-login" data-auth-tab="login" data-title="Вход в аккаунт">Авторизация</button>
+      </div>
       <h1 id="registration-title">Создать аккаунт</h1>
       <p class="registration-copy">Заполните форму, чтобы познакомиться с проектом.</p>
-      <form onsubmit="return false">
+      <form id="panel-signup" role="tabpanel" aria-labelledby="tab-signup" data-auth-panel="signup" onsubmit="return false">
         <label class="registration-field">
           <span>Имя пользователя</span>
           <input name="username" type="text" autocomplete="username" required>
@@ -40,6 +44,17 @@
         </label>
         <button class="button button-primary registration-submit" type="button">Зарегистрироваться</button>
       </form>
+      <form id="panel-login" role="tabpanel" aria-labelledby="tab-login" data-auth-panel="login" onsubmit="return false" hidden>
+        <label class="registration-field">
+          <span>Имя пользователя</span>
+          <input name="login-username" type="text" autocomplete="username" required>
+        </label>
+        <label class="registration-field">
+          <span>Пароль</span>
+          <input name="login-password" type="password" autocomplete="current-password" required>
+        </label>
+        <button class="button button-primary registration-submit" type="button">Войти</button>
+      </form>
       <p class="registration-note">Демонстрационная форма: данные не отправляются и не сохраняются.</p>
     </section>
   </main>
@@ -52,5 +67,6 @@
     <div class="footer-bottom section-wrap"><span>СОЗДАНО С ЛЮБОВЬЮ К ИСТОРИИ</span><span>МОСКВА · ВЕЗДЕ</span><a href="/">НАВЕРХ ↑</a></div>
   </footer>
   </div>
+  <script src="/js/login.js"></script>
 </body>
 </html>
