@@ -1,7 +1,0 @@
-{
-  "hosting": {
-    "buildCommand": "pnpm run build",
-    "buildOutputDir": "dist",
-    "nodeVersion": "22"
-  }
-}
