@@ -238,8 +238,8 @@ img { max-width: 100%; }
 .about-founder .founder-photo { padding-bottom:10px; }
 .slavic-notes { padding-bottom:90px; }
 .slavic-notes > .lecture-back-link { display:inline-flex; margin:0 0 22px; }
-.slavic-notes-video { margin:0 0 30px; border:1px solid #e4d5c9; background:#f4f1ea; }
-.slavic-notes-video iframe { display:block; width:100%; aspect-ratio:16 / 9; border:0; }
+.slavic-notes-video { width:min(100%,850px); aspect-ratio:16 / 9; margin:0 0 30px; overflow:hidden; border:1px solid #e4d5c9; border-radius:4px; background:#f4f1ea; box-shadow:0 12px 32px #60434312; }
+.slavic-notes-video iframe { display:block; width:100%; height:100%; border:0; }
 
 .slavic-notes-page { max-width:850px; padding:clamp(24px,4vw,42px); background:#fffaf8; border:1px solid #f0e3df; }
 .slavic-notes-page .eyebrow { margin-bottom:12px; }
